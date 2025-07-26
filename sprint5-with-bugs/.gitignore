@@ -1,0 +1,111 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Cypress Test Results
+cypress/reports/
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
+cypress/fixtures/downloads/
+
+# Test Results and Reports
+test-results/
+comprehensive-bug-reports/
+testSessions/
+*.html
+*.xml
+*.tap
+mochawesome-report/
+
+# Log files
+*.log
+logs/
+*.log.*
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+.tmp/
+.cache/
+
+# Build outputs
+dist/
+build/
+out/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Coverage reports
+coverage/
+.nyc_output/
+*.lcov
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Debug files
+debug.log
+error.log
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Generated documentation
+docs/generated/
+
+# Local configuration files
+config/local.json
+config/development.json
+config/production.json
+
+# Certificate files
+*.pem
+*.key
+*.crt
+
+# Database files (if any)
+*.db
+*.sqlite
+*.sqlite3

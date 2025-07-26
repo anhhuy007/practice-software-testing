@@ -1,0 +1,143 @@
+{
+  "bugReport": {
+    "testSession": {
+      "date": "2025-07-25T16:52:03.213Z",
+      "browser": "Chrome",
+      "testSuite": "GUI Checklist 1.6 - COMPATIBILITY",
+      "totalTests": 12,
+      "passed": 10,
+      "failed": 2,
+      "passRate": "83.33%",
+      "duration": "19.445 seconds"
+    },
+    "bugs": [
+      {
+        "bugId": "BUG-001",
+        "uuid": "4d57d0e2-65e6-4a1d-95b6-e6bfeb966e42",
+        "summary": "Missing semantic HTML elements preventing screen reader compatibility",
+        "description": "The product page lacks proper semantic HTML structure required for accessibility compliance and screen reader support.",
+        "priority": "High",
+        "severity": "Major",
+        "status": "Open",
+        "component": "Product Page HTML Structure",
+        "affectedFeature": "Accessibility/Screen Reader Support",
+        "browser": "Chrome",
+        "testCase": "1.6.5. Kiểm tra tương thích với screen readers",
+        "fullTestTitle": "GUI Checklist 1.6 - TÍNH TƯƠNG THÍCH (COMPATIBILITY) 1.6.5. Kiểm tra tương thích với screen readers",
+        "duration": 4888,
+        "errorMessage": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `main, section, article, header, footer`, but never found it.",
+        "errorLocation": "cypress/e2e/compatibility.cy.js:86:7",
+        "stepsToReproduce": [
+          "Navigate to the product page",
+          "Verify that the product name is visible using [data-test=\"product-name\"]",
+          "Check for presence of semantic HTML elements: main, section, article, header, footer",
+          "Attempt to locate these elements on the page"
+        ],
+        "expectedResult": "The page should contain proper semantic HTML structure with at least one of the following elements: main, section, article, header, or footer for accessibility compliance",
+        "actualResult": "No semantic HTML elements (main, section, article, header, footer) found on the page",
+        "impact": "Affects accessibility compliance and screen reader users",
+        "screenshotPath": "cypress/screenshots/compatibility.cy.js/GUI Checklist 1.6 - TÍNH TƯƠNG THÍCH (COMPATIBILITY) -- 1.6.5. Kiểm tra tương thích với screen readers (failed).png",
+        "recommendations": [
+          "Add proper semantic HTML structure to the product page",
+          "Implement <main>, <section>, <article>, <header>, and <footer> elements",
+          "Ensure ARIA attributes are properly implemented",
+          "Conduct accessibility audit using tools like axe-core"
+        ]
+      },
+      {
+        "bugId": "BUG-002",
+        "uuid": "aa4f5428-de85-4a2b-af41-64f82806e14b",
+        "summary": "No form elements present affecting JavaScript-disabled functionality",
+        "description": "The product page lacks form elements with proper action attributes, preventing proper functionality when JavaScript is disabled.",
+        "priority": "Medium",
+        "severity": "Major",
+        "status": "Open",
+        "component": "Product Page Form Elements",
+        "affectedFeature": "Progressive Enhancement/JavaScript Fallback",
+        "browser": "Chrome",
+        "testCase": "1.6.6. Xác nhận hoạt động với JavaScript disabled",
+        "fullTestTitle": "GUI Checklist 1.6 - TÍNH TƯƠNG THÍCH (COMPATIBILITY) 1.6.6. Xác nhận hoạt động với JavaScript disabled",
+        "duration": 4904,
+        "errorMessage": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `form`, but never found it.",
+        "errorLocation": "cypress/e2e/compatibility.cy.js:105:7",
+        "stepsToReproduce": [
+          "Navigate to the product page",
+          "Verify that the product name is visible using [data-test=\"product-name\"]",
+          "Clear cookies and disable JavaScript (simulated)",
+          "Check for the presence of <form> elements on the page",
+          "Verify if forms have proper action attributes for fallback functionality"
+        ],
+        "expectedResult": "The page should contain form elements with proper action attributes to ensure basic functionality works even when JavaScript is disabled",
+        "actualResult": "No <form> elements found on the product page",
+        "impact": "Progressive enhancement fails; users with JavaScript disabled cannot interact with the page properly",
+        "screenshotPath": "cypress/screenshots/compatibility.cy.js/GUI Checklist 1.6 - TÍNH TƯƠNG THÍCH (COMPATIBILITY) -- 1.6.6. Xác nhận hoạt động với JavaScript disabled (failed).png",
+        "recommendations": [
+          "Implement server-side form handling for critical user actions",
+          "Add <form> elements with proper action and method attributes",
+          "Ensure progressive enhancement principles are followed",
+          "Test functionality with JavaScript completely disabled"
+        ]
+      }
+    ],
+    "passedTests": [
+      {
+        "testCase": "1.6.1. Kiểm tra tương thích với các trình duyệt khác nhau",
+        "duration": 1198,
+        "status": "passed"
+      },
+      {
+        "testCase": "1.6.2. Xác nhận responsive design trên mobile devices",
+        "duration": 788,
+        "status": "passed"
+      },
+      {
+        "testCase": "1.6.3. Kiểm tra responsive design trên tablet devices",
+        "duration": 715,
+        "status": "passed"
+      },
+      {
+        "testCase": "1.6.4. Xác minh hoạt động trên desktop resolutions",
+        "duration": 868,
+        "status": "passed"
+      },
+      {
+        "testCase": "1.6.7. Kiểm tra performance trên các thiết bị khác nhau",
+        "duration": 1579,
+        "status": "passed"
+      },
+      {
+        "testCase": "1.6.8. Xác minh tương thích với touch devices",
+        "duration": 932,
+        "status": "passed"
+      },
+      {
+        "testCase": "1.6.9. Kiểm tra tương thích với các OS khác nhau",
+        "duration": 754,
+        "status": "passed"
+      },
+      {
+        "testCase": "1.6.10. Xác nhận hoạt động với cookies disabled",
+        "duration": 1200,
+        "status": "passed"
+      },
+      {
+        "testCase": "1.6.11. Kiểm tra tương thích với high contrast mode",
+        "duration": 622,
+        "status": "passed"
+      },
+      {
+        "testCase": "1.6.12. Xác minh tương thích với print styles",
+        "duration": 623,
+        "status": "passed"
+      }
+    ],
+    "testEnvironment": {
+      "framework": "Cypress",
+      "reporter": "Mochawesome",
+      "browser": "Chrome",
+      "os": "Windows",
+      "testFile": "cypress/e2e/compatibility.cy.js",
+      "baseUrl": "http://localhost:4200"
+    }
+  }
+}

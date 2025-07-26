@@ -1,0 +1,8 @@
+Bug ID,Summary,Priority,Severity,Status,Component,Browser,Error Type,Steps to Reproduce,Expected Result,Actual Result,Impact
+BUG-001,Missing semantic HTML elements preventing screen reader compatibility,High,Major,Open,Product Page HTML Structure,Chrome,Accessibility,"1. Navigate to product page
+2. Check for semantic HTML elements (main, section, article, header, footer)
+3. Verify accessibility compliance","Page should contain proper semantic HTML structure with main, section, article, header, or footer elements","No semantic HTML elements found on the page - timeout after 4000ms",Affects accessibility compliance and screen reader users
+BUG-002,No form elements present affecting JavaScript-disabled functionality,Medium,Major,Open,Product Page Form Elements,Chrome,Progressive Enhancement,"1. Navigate to product page  
+2. Disable JavaScript (simulated)
+3. Check for form elements
+4. Verify forms have action attributes","Page should contain form elements with proper action attributes for JavaScript fallback","No form elements found on the page - timeout after 4000ms",Users with JavaScript disabled cannot interact properly

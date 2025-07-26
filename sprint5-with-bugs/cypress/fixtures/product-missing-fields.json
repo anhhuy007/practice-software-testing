@@ -1,0 +1,22 @@
+{
+  "id": 1,
+  "name": "Test Product",
+  "price": 99.99,
+  "stock": 10,
+  "is_rental": false,
+  "category": {
+    "id": 1,
+    "name": "Test Category"
+  },
+  "brand": {
+    "id": 1,
+    "name": "Test Brand"
+  },
+  "product_image": {
+    "file_name": "test-image.jpg",
+    "by_name": "Test Photographer",
+    "by_url": "https://example.com/photographer",
+    "source_name": "Test Source",
+    "source_url": "https://example.com/source"
+  }
+}
