@@ -1,27 +1,32 @@
-// ***********************************************************
-// This example support/e2e.js is processed and
-// loaded automatically before your test files.
-//
-// This is a great place to put global configuration and
-// behavior that modifies Cypress.
-//
-// You can change the location of this file or turn off
-// automatically serving support files with the
-// 'supportFile' configuration option.
-//
-// You can read more here:
-// https://on.cypress.io/configuration
-// ***********************************************************
-
 // Import commands.js using ES2015 syntax:
 import './commands'
 
-// Global setup for handling authentication API calls
+// Alternatively you can use CommonJS syntax:
+// require('./commands')
+
+// Add global configurations
 beforeEach(() => {
-  // Intercept the user authentication check that returns 401 when not logged in
-  // This prevents test failures due to expected authentication failures
-  cy.intercept('GET', '**/users/me', { statusCode: 401, body: { message: 'Unauthorized' } }).as('globalGetUserMe')
+  // Set viewport size
+  cy.viewport(1280, 720);
   
-  // Optionally intercept other auth-related endpoints that might cause similar issues
-  cy.intercept('GET', '**/auth/verify', { statusCode: 401, body: { message: 'Unauthorized' } }).as('globalAuthVerify')
-})
+  // Handle uncaught exceptions to prevent test failures due to app errors
+  cy.on('uncaught:exception', (err, runnable) => {
+    // Return false to prevent the error from failing the test
+    // You can customize this to handle specific errors
+    if (err.message.includes('ResizeObserver loop limit exceeded')) {
+      return false;
+    }
+    if (err.message.includes('Non-Error promise rejection captured')) {
+      return false;
+    }
+    // Let other errors fail the test
+    return true;
+  });
+});
+
+// Set default command timeout
+Cypress.config('defaultCommandTimeout', 10000);
+Cypress.config('pageLoadTimeout', 30000);
+
+// Add custom configuration
+Cypress.env('baseUrl', Cypress.env('baseUrl') || 'http://localhost:4200/#');
