@@ -1,0 +1,16 @@
+{
+  "users": {
+    "customer": {
+      "email": "customer@practicesoftwaretesting.com",
+      "password": "welcome01"
+    },
+    "customer2": {
+      "email": "customer2@practicesoftwaretesting.com",
+      "password": "welcome01"
+    },
+    "invalid": {
+      "email": "wrong@example.com",
+      "password": "wrongpassword"
+    }
+  }
+}

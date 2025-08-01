@@ -2,45 +2,44 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: "http://localhost:4200",
-    specPattern: "cypress/e2e/**/*.cy.{js,jsx,ts,tsx}",
+    baseUrl: 'http://localhost:4200/#', // Local development server
+    viewportWidth: 1280,
+    viewportHeight: 720,
+    defaultCommandTimeout: 10000,
+    pageLoadTimeout: 60000,
+    video: true,
+    videosFolder: 'test-results/videos',
+    screenshotsFolder: 'test-results/screenshots',
+    screenshotOnRunFailure: true,
     
-    // Set Chrome as default browser
-    browser: "chrome",
-    
-    // Configure test result reporting
     setupNodeEvents(on, config) {
-      // You can add custom event listeners here if needed
-      return config;
+      // implement node event listeners here
+      on('after:spec', (spec, results) => {
+        // Copy artifacts to output directory
+        if (results && results.video) {
+          // Save video file with meaningful name
+          const videoName = `${spec.name.replace('/', '-').replace('.cy.js', '')}-${Date.now()}.mp4`;
+          return require('fs').renameSync(
+            results.video,
+            `test-results/videos/${videoName}`
+          );
+        }
+      });
     },
     
-    // Save videos and screenshots
-    video: true,
-    videosFolder: "cypress/videos",
-    screenshotsFolder: "cypress/screenshots",
+    specPattern: 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
+    supportFile: 'cypress/support/e2e.js',
     
-    // Reporter configuration - mochawesome for HTML reports
-    reporter: "mochawesome",
+    env: {
+      baseUrl: 'http://localhost:4200/#'
+    },
+    
+    reporter: 'mochawesome',
     reporterOptions: {
-      reportDir: "cypress/reports",
+      reportDir: 'test-results/reports',
       overwrite: false,
       html: true,
-      json: true,
-      timestamp: "mmddyyyy_HHMMss"
+      json: true
     }
   },
-  
-  // Alternative reporter configurations you can use:
-  // For JUnit XML format (uncomment to use):
-  // reporter: "junit",
-  // reporterOptions: {
-  //   mochaFile: "cypress/reports/test-results-[hash].xml",
-  //   toConsole: true
-  // }
-  
-  // For JSON format (uncomment to use):
-  // reporter: "json",
-  // reporterOptions: {
-  //   outputFile: "cypress/reports/test-results.json"
-  // }
 });

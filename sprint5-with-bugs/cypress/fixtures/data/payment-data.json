@@ -1,0 +1,26 @@
+{
+  "bankTransfer": {
+    "payment_method": "Bank Transfer",
+    "account_name": "John Doe",
+    "account_number": "12345678901234"
+  },
+  "creditCard": {
+    "payment_method": "Credit Card",
+    "account_name": "Jane Smith",
+    "account_number": "4111111111111111"
+  },
+  "cashOnDelivery": {
+    "payment_method": "Cash on Delivery"
+  },
+  "buyNowPayLater": {
+    "payment_method": "Buy Now Pay Later"
+  },
+  "giftCard": {
+    "payment_method": "Gift Card",
+    "account_name": "GC12345678",
+    "account_number": "1234"
+  },
+  "errorPayment": {
+    "payment_method": "error"
+  }
+}

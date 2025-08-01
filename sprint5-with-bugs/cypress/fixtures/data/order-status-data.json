@@ -1,0 +1,9 @@
+{
+  "expectedStatusOptions": [
+    "AWAITING_FULFILLMENT",
+    "ON_HOLD",
+    "AWAITING_SHIPMENT",
+    "SHIPPED",
+    "COMPLETED"
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "testMetaData": {
+    "currentDateTime": "2025-08-01 14:30:00",
+    "currentUser": "anhhuy007",
+    "testType": "Data-Driven Testing",
+    "version": "1.0"
+  },
+  "baseUrl": "http://localhost:4200/#",
+  "products": [
+    {
+      "id": 1,
+      "name": "Pliers",
+      "price": "$10.00",
+      "quantity": 2,
+      "totalPrice": "$20.00"
+    },
+    {
+      "id": 2,
+      "name": "Hammer",
+      "price": "$15.00",
+      "quantity": 1,
+      "totalPrice": "$15.00"
+    }
+  ],
+  "address": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "address": "Test street 123",
+    "city": "Test City",
+    "state": "Test State",
+    "country": "Test Country",
+    "postcode": "12345",
+    "email": "john.doe@example.com",
+    "phone": "123-456-7890",
+    "confirmationText": "Thank you for your order"
+  },
+  "selectors": {
+    "cart": {
+      "quantityInput": "[data-test=\"quantity\"]",
+      "addToCartButton": "[data-test=\"add-to-cart\"]",
+      "cartIcon": "[data-test=\"nav-cart\"]",
+      "cartItems": "tbody tr",
+      "productNameCell": "td:nth-child(1)",
+      "quantityCell": "td:nth-child(2)",
+      "priceCell": "td:nth-child(3)",
+      "totalPriceCell": "td:nth-child(4)",
+      "removeButton": "[data-test=\"remove\"]",
+      "updateButton": "[data-test=\"update\"]",
+      "totalAmount": "[data-test=\"total\"]",
+      "checkoutButton": "[data-test=\"proceed-1\"]"
+    },
+    "checkout": {
+      "firstName": "[data-test=\"firstName\"]",
+      "lastName": "[data-test=\"lastName\"]",
+      "address": "[data-test=\"address\"]",
+      "city": "[data-test=\"city\"]",
+      "state": "[data-test=\"state\"]",
+      "postcode": "[data-test=\"postcode\"]",
+      "email": "[data-test=\"email\"]",
+      "phone": "[data-test=\"phone\"]",
+      "bankTransferOption": "[data-test=\"payment-bank\"]",
+      "creditCardOption": "[data-test=\"payment-card\"]",
+      "creditCardName": "[data-test=\"card-name\"]",
+      "creditCardNumber": "[data-test=\"card-number\"]",
+      "creditCardExpiry": "[data-test=\"card-expiry\"]",
+      "creditCardCvv": "[data-test=\"card-cvv\"]",
+      "standardShippingOption": "[data-test=\"shipping-standard\"]",
+      "expressShippingOption": "[data-test=\"shipping-express\"]",
+      "completeOrderButton": "[data-test=\"place-order\"]",
+      "orderConfirmation": "[data-test=\"confirmation\"]",
+      "orderNumber": "[data-test=\"order-number\"]",
+      "orderSummaryItems": "[data-test=\"order-items\"] tr",
+      "subtotal": "[data-test=\"subtotal\"]",
+      "totalAmount": "[data-test=\"total\"]",
+      "errorMessages": ".form-error"
+    }
+  },
+  "screenshots": {
+    "cart": {
+      "prefix": "cart-"
+    },
+    "checkout": {
+      "prefix": "checkout-"
+    }
+  }
+}

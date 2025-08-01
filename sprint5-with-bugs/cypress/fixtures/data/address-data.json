@@ -1,0 +1,9 @@
+{
+  "valid": {
+    "address": "123 Test Street",
+    "city": "Test City",
+    "state": "Test State",
+    "country": "Test Country",
+    "postcode": "12345"
+  }
+}

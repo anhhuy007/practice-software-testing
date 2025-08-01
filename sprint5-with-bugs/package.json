@@ -14,13 +14,18 @@
     "cy:run:report": "cypress run --browser chrome && npm run generate:report",
     "generate:report": "mochawesome-merge cypress/reports/*.json > cypress/reports/merged-report.json && marge cypress/reports/merged-report.json --reportDir cypress/reports --inline",
     "generate:custom": "node scripts/generate-reports.js",
-    "test:full": "cypress run --browser chrome && npm run generate:custom"
+    "test:full": "cypress run --browser chrome && npm run generate:custom",
+    "run:all-tests": "node run-all-tests.js",
+    "run:admin-tests": "cypress run --browser chrome --spec \"cypress/e2e/admin/**/*.cy.js\" --reporter mochawesome",
+    "run:checkout-tests": "cypress run --browser chrome --spec \"cypress/e2e/checkout/**/*.cy.js,cypress/e2e/cart-functionality.cy.js,cypress/e2e/checkout.cy.js\" --reporter mochawesome",
+    "combine-reports": "node combine-reports.js",
+    "full-test-suite": "npm run run:all-tests && npm run combine-reports"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^14.5.2",
+    "cypress": "^14.5.3",
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.3.0",
     "mochawesome-report-generator": "^6.2.0"
